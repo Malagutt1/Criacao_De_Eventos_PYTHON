@@ -3,7 +3,8 @@ init()
 
 lista_dos_eventos = []
 quantidade_de_pessoas = []
-alunos_por_evento = []
+alunos_por_evento = {}
+aluno=[]
 
 def cadastrar_eventos(titulo_do_evento, quantidade_maxima_de_pessoas):
     lista_dos_eventos.append(titulo_do_evento)
@@ -14,6 +15,7 @@ def cadastrar_eventos(titulo_do_evento, quantidade_maxima_de_pessoas):
 
 def cadastrar_alunos(nome_aluno):
     print(Fore.GREEN + f"O(a) aluno(a) {nome_aluno} foi registrado no sistema!" + Fore.RESET)
+    aluno.append(nome_aluno)
     return nome_aluno
 
 def exibir_eventos():
@@ -72,7 +74,9 @@ def menu_opcoes():
 
         elif Menu_opcoes_escolher == "4":
             nome_aluno = input("Insira o nome do aluno para inscrição: ").strip()
-            if nome_aluno in cadastrar_alunos
+            if nome_aluno in aluno:
+                nome_aluno=str(nome_aluno)
+            else: print("Aluno não adicionado ao banco de dados")
             evento = input("Insira o nome do evento: ").strip()
             fazer_inscricao(nome_aluno, evento)
 
