@@ -21,6 +21,21 @@ def cadastrar_alunos(nome_aluno):
     aluno.append(nome_aluno)  # Adiciona o nome do aluno à lista de alunos.
     return nome_aluno  # Retorna o nome do aluno.
 
+def excluir_alunos(nome_aluno,evento): 
+    aluno_removido= False
+    for evento, alunos in alunos_por_evento.items():
+        if nome_aluno in alunos:  # Verifica se o aluno está inscrito no evento.
+            alunos.remove(nome_aluno)  # Remove o aluno da lista de inscritos.
+            indice_evento = lista_dos_eventos.index(evento)  # Obtém o índice do evento na lista.
+            quantidade_de_pessoas[indice_evento] += 1  # Incrementa o número de vagas disponíveis.
+            aluno_removido = True  # Marca que o aluno foi removido.
+    if nome_aluno in alunos:
+        alunos.remove(nome_aluno)
+    print(Fore.GREEN + f"O(a) aluno(a) {nome_aluno} foi removido(a) de todos os eventos!" + Fore.RESET)
+        
+    return aluno_removido  # Retorna o nome do aluno.
+    
+
 # Função para exibir todos os eventos e suas vagas disponíveis.
 def exibir_eventos():
     print(Fore.LIGHTYELLOW_EX + "Eventos disponíveis:" + Fore.RESET)  # Cabeçalho da lista de eventos.
@@ -55,9 +70,10 @@ def menu_opcoes():
         Menu_opcoes_escolher = input("\nDigite um número para as seguintes funções:\n"
                                     "1 = Cadastrar novo evento\n"
                                     "2 = Cadastrar aluno\n"
-                                    "3 = Exibir eventos na tela\n"
-                                    "4 = Fazer inscrição do aluno em um evento\n"
-                                    "5 = Exibir alunos no evento\n"
+                                    "3 = Remover aluno\n"
+                                    "4 = Exibir eventos na tela\n"
+                                    "5 = Fazer inscrição do aluno em um evento\n"
+                                    "6 = Exibir alunos no evento\n"
                                     "Digite 'sair' para sair do menu\n"
                                     "Escolha a opção desejada: ").strip().lower()  # Solicita a escolha do usuário.
 
@@ -75,11 +91,18 @@ def menu_opcoes():
         elif Menu_opcoes_escolher == "2":  # Opção para cadastrar um aluno.
             nome_aluno = input("Insira o nome do estudante: ").strip()  # Solicita o nome do aluno.
             cadastrar_alunos(nome_aluno)  # Chama a função para registrar o aluno.
+            
+        elif Menu_opcoes_escolher == "3":
+            nome_aluno = input("Insira o nome do estudante a ser removido: ").strip()  # Solicita o nome do aluno.
+            if nome_aluno in aluno:
+                excluir_alunos(nome_aluno, evento)  # Chama a função para excluir o aluno.
+            else:
+                print(Fore.RED + "Aluno não encontrado no sistema!" + Fore.RESET)
 
-        elif Menu_opcoes_escolher == "3":  # Opção para exibir os eventos disponíveis.
+        elif Menu_opcoes_escolher == "4":  # Opção para exibir os eventos disponíveis.
             exibir_eventos()  # Chama a função para exibir os eventos.
 
-        elif Menu_opcoes_escolher == "4":  # Opção para inscrever um aluno em um evento.
+        elif Menu_opcoes_escolher == "5":  # Opção para inscrever um aluno em um evento.
             nome_aluno = input("Insira o nome do aluno para inscrição: ").strip()  # Solicita o nome do aluno.
             if nome_aluno in aluno:  # Verifica se o aluno foi registrado previamente.
                 nome_aluno = str(nome_aluno)  # Converte para string (não necessário aqui, mas incluído).
@@ -89,8 +112,8 @@ def menu_opcoes():
                 print("Aluno não adicionado ao banco de dados")  # Mensagem de erro para aluno não registrado.
             
 
-        elif Menu_opcoes_escolher == "5":  # Opção para exibir os alunos inscritos em eventos.
-            exibir_alunos_no_evento()  # Chama a função para exibir alunos por evento.
+        elif Menu_opcoes_escolher == "6":  # Opção para exibir os alunos inscritos em eventos.
+             exibir_alunos_no_evento()  # Chama a função para exibir alunos por evento.
 
         elif Menu_opcoes_escolher == "sair":  # Opção para sair do menu.
             deseja_sair = input("Tem certeza que deseja sair? Digite 'sair' novamente para confirmar: ").strip().lower()  # Confirmação adicional para sair.
