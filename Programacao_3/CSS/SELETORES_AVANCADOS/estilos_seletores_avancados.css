@@ -1,0 +1,46 @@
+/* Seletor de níveis variados */
+/* Estilo de input com atributo específico */
+
+body {
+    background-color: rgba(128, 128, 128, 0.349);
+}
+
+input[type="password"] {
+    border: 3px solid green;
+    border-radius: 20px;
+}
+
+/* Interação com elementos via hover (ex: <p>) */
+p[title]:hover {
+    background-color: yellow;
+}
+
+/* Primeiro item de uma lista */
+ul li:first-child {
+    font-weight: bold;
+}
+
+/* Último item de uma lista */
+ul li:last-child {
+    color: blue;
+}
+
+/* Primeira letra de um parágrafo */
+p::first-letter {
+    color: greenyellow;
+    font-size: xx-large;
+}
+
+/* Conteúdo extra adicionado após elemento específico */
+.texto_span::after {
+    content: "Adicionado via CSS";
+    color: purple;
+}
+
+.texto_span::after {
+    /* Insere prefixo padrão antes do conteúdo em <span> dentro de .texto */
+    content: "TEXTO";
+
+    /* Cor de destaque para o conteúdo prefixado */
+    color: orange;
+}

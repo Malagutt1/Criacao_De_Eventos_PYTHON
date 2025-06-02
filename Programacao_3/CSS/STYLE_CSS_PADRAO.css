@@ -1,0 +1,118 @@
+/*
+# 4FACFE #8CE7FE - DEGRADE AZUL CLARO (PARA TITULOS E BOTÕES)
+#080C1C - AZUL ESCURO (para o fundo principal do site)
+#F8F8F8 - BRANCO (PARA TEXTO)
+*/
+
+/*TODAS AS PÀGINAS HTML*/
+
+body{
+    background-color: #080C1C;
+    padding-left: 35px;   /* Espaço à esquerda */
+    padding-right: 40px;  /* Espaço à direita */
+    margin: 0;      /* Remove as margens padrões do navegador */
+    box-sizing: border-box;  /* Garante que o padding seja incluído no tamanho total do elemento */
+}
+h1{
+    text-align: center;
+    
+}
+
+h1, h2, h3 {
+    color: #76FF03  ;
+}
+p{
+    color: white;
+}
+ul, li, ol{
+    color: aliceblue;
+}
+a{
+    display: flex;
+    justify-content: center;  
+    align-items: center; 
+    color: green;
+}
+a:hover{
+    color: greenyellow;
+}
+
+
+
+
+/*MULTIMIDIA*/
+.MULTI{
+    background-color: white;
+}
+.img_ifsc{
+    margin-left: 43px;
+}
+
+/*CONCEITOS HTML E CSS*/
+dt{
+    color: #74ff03ed
+}
+dd{
+    color: #bfff8b;
+
+}
+
+/*ELEMENTOS AUDIO - VIDEO*/
+.video_temp , .music{
+    display: flex;
+    justify-content: center;  
+    align-items: center; 
+
+}
+
+/*CONCEITOS HTML*/
+.principais_tags{
+    color: #bfff8b;
+}
+
+
+/*EXERCICIOS TAGS SEMANTIVAS*/
+.bar{
+    display: flex;                    /* Usar Flexbox na barra */
+    justify-content: center;          /* Centraliza os itens horizontalmente */
+    align-items: center;              /* Centraliza os itens verticalmente */
+}
+.bar ul {
+    display: flex;           /* Flexbox no UL */
+    list-style: none;        /* Remove os pontos da lista */
+    padding: 0;
+    margin: 0;
+}
+
+.bar li {
+        margin: 0 15px;
+    transition: transform 0.5s ease;
+}
+.bar li:hover{
+    transform: scale(1.025);
+}
+
+.bar a {
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
+.bar a:hover {
+    color: #76FF03;
+}
+
+
+.exercicios ul  {
+    list-style: none;
+
+}
+.termos_privacidade{
+    display: flex;
+    justify-content: left;  
+    align-items: center; 
+    
+}
+
+
+

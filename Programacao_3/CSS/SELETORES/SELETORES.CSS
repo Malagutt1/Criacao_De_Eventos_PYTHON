@@ -1,0 +1,46 @@
+/*Seletores CSS de tipo:
+
+
+# 4A6E66 */
+body{
+    background-color:#8AA6A3 ;
+    /*font-family: "Arial Narrow";*/
+}
+section{
+    background-color: antiquewhite;
+}
+h1 {
+    color: #10403B;
+    text-align: center;
+    font-weight: bold;
+}
+h1:hover{
+    color: white ;
+}
+
+h2{
+    color: #127369;
+}
+p{
+    text-indent: 50px;
+    font-size: 24px;
+    line-height: 1.5;
+    color: #127369;
+}
+/*Seletor de tipo ID*/
+#Paragrafo-id{
+    color: #E2B97C  ;
+    text-indent: 50px;
+    font-size: 24px;
+    line-height: 1.5;
+}
+/*Seletor do tipo Class*/
+.p-class{
+    color: #D4E1D4 ;
+    text-indent: 50px;
+    font-size: 24px;
+    line-height: 1.5;
+}
+small{
+    color:#10403B;
+}

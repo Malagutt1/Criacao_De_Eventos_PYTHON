@@ -1,0 +1,29 @@
+<!-- Conceitos básicos sobre links em HTML -->
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LINKS HTML</title>
+        <link rel="stylesheet" href="../../CSS/STYLE_CSS_PADRAO.css">
+    </head>
+    <body>
+
+    <h1 id="inicio">Como criar links em HTML</h1>
+    <h2>Links internos referenciam partes da mesma página</h2>
+    <!-- A tag <p> define um parágrafo. Dentro dele, a tag <a> cria um link que direciona para a seção com ID 'secao-informacoes' -->
+    <p><a href="#secao-informacoes">Clique aqui para ir à seção de Informações</a></p> <!-- # indica que o navegador deve procurar pelo ID especificado -->
+    
+    <p><a href="observacoes_links.html" target="_blank" rel="noopener noreferrer">Explicação sobre tags, propriedades e métodos usados na página links.html</a></p>
+    
+    <h2>Links externos</h2>
+    <p><a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Visite o site do GOOGLE.COM</a></p>
+
+    <h2 id="secao-informacoes">Informações</h2> <!-- ID alvo do link interno -->
+    <p>Esta é uma seção interna da página, acessada via link interno.</p>
+
+    <p><a href="#inicio">Voltar para o início</a></p>
+    
+    </body>
+</html>

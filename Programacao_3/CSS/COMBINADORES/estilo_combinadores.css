@@ -1,0 +1,20 @@
+*{
+    border: 10;
+}
+/* COMBINADORES DESCENDENTE: SELECIONA TODOS OS <P> DEBTRI DE .CONTAINER */
+.container_pai{
+    color: red;
+}
+
+/* COMBINADOR DO TIPO "FILHO DIRETO (>)". SELECIONA OS FILHOS DIRETOS <P> DE CONTAINER_FILHO */
+.container_filho > P{
+    color: green;
+    font-weight: bolder;
+}
+
+/* COMBINADOR ADJACENTE (+): SELECIONA O PRÓXIMO ELEMENTO <button> IMADIATAMENTE APÓS OUTRO <button> */
+.botao_salvar + .botao_cancelar{
+    background-color: red;
+    color: white;
+    font-weight: bolder;
+}

@@ -1,22 +1,104 @@
+<!-- Comentário de bloco explicando a estrutura geral do documento -->
+
+<!-- A declaração <!DOCTYPE html> define o tipo do documento e indica que esta página está usando HTML5, a versão mais atual do HTML.
+Este comando ajuda o navegador a interpretar corretamente o conteúdo exibido.
+
+A tag <html> é o elemento raiz que engloba todo o conteúdo da página, exceto o <!DOCTYPE>. O atributo lang="pt-br" informa que o idioma principal é português brasileiro,
+o que é importante para acessibilidade e motores de busca para fornecer resultados e funcionalidades corretas.
+
+O elemento <head> inclui metadados, links para arquivos CSS, scripts e outras informações que não aparecem diretamente na página visualizada.
+Os metadados são dados que descrevem o documento e auxiliam na configuração do navegador e motores de busca.
+
+A tag <meta charset="UTF-8"> define a codificação de caracteres usada pelo documento, garantindo que letras e símbolos de praticamente todos os idiomas sejam exibidos corretamente. -->
+
 <!DOCTYPE html>
-<!-- Isso é um comentario de bloco de começo ao fim-->
-
-<!-- A declaração "DOCTYPE html" informa que temos uma declaração do documento (DTP). Diz ao navegador que esta é uma página HTML5, versão mais recente do HTML. Isso ajuda o navegador a obter corretamente o conteudo da página.
-A tag <HTML> é o elemento raux de todo documento HTML e envolve tudo o conteúdo da página, exceto a declaração do tipo de documento, o atributo 'lang="pt"' especifica que o idioma principal do documento é o portugues. Isso é útil para acessibilidade e motores de busca, pois eles podem fornecer funcionalidades adequadas baseadas no idioma 
-    
-A tag <head> contém metadadois, links para folhas de estilo, scripts e outras informações que não são diretamente visóveis na página. Metadados incluem informações sobre o documento que não são mostradas diretamente na inferface da página
-    
-a tag <meta> com o atributo 'charset="UTF-8"' defome a codificação de caracteres do documento para UTF-8. UTF-8 é uma codificação de caracteres universal que inclui praticamente "todos os caracteres de todos os idiomas do mundo", garantido que qualquer texto seja exibido corretamente-->
-
-
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="width=device-width, initial-scale=1.0">
-    <title>HTML_CONCEITOS</title>
+  <meta charset="UTF-8">
+  <title>Exemplo de Estrutura HTML</title>
+  <link rel="stylesheet" href="../../CSS/STYLE_CSS_PADRAO.css">
 </head>
-
 <body>
+
+  <h1>HTML</h1>
+  <p><strong>Hypertext Markup Language</strong></p>
+
+  <p>HTML utiliza "tags" para delimitar e estruturar diferentes tipos de conteúdo em uma página web.
+  Cada tag é envolvida por sinais de menor e maior (< e >), por exemplo:</p>
+
+  <p>Um documento <abbr title="Hypertext Markup Language">HTML</abbr> básico possui uma estrutura que divide o conteúdo em cabeça (<code>head</code>) e corpo (<code>body</code>).</p>
+
+  <br>
+
+  <h2>Principais TAGS do HTML</h2>
+
+  <section class="principais_tags">
+    <ul>
+      <li>&lt;h1&gt; &lt;/h1&gt;   &lt;!-- Cabeçalho principal da página --&gt; </li>
+      <li>&lt;h2&gt; &lt;/h2&gt;   &lt;!-- Subcabeçalho --&gt;</li>
+      <li>&lt;h3&gt; &lt;/h3&gt;   &lt;!-- Seção --&gt; </li>
+      <li>&lt;h4&gt; &lt;/h4&gt;   &lt;!-- Subseção --&gt;</li>
+      <li>&lt;h5&gt; &lt;/h5&gt;   &lt;!-- Título de menor hierarquia --&gt;</li>
+      <li>&lt;h6&gt; &lt;/h6&gt;   &lt;!-- Título com menor importância --&gt;</li>
+      <li>&lt;p&gt; &lt;/p&gt;     &lt;!-- Parágrafo de texto --&gt;</li>
+      <li>&lt;img src="html.png" alt="Imagem HTML"&gt; &lt;!-- Inserção de imagem com texto alternativo --&gt; </li>
+  </ul>
+  </section>
+
+  <br>
+
+  <h2>Caminho Absoluto:</h2>
+  <p>O caminho absoluto mostra a localização completa de um arquivo ou pasta a partir da raiz do sistema de arquivos.</p>
+  <p>Em sistemas UNIX, a raiz é representada por "/", enquanto no Windows, utiliza-se "\".</p>
+
+  <br>
+
+  <h2>Caminho Relativo:</h2>
+  <p>É uma forma prática de apontar para arquivos considerando a localização atual do arquivo que está sendo editado.</p>
+  <ul>
+    <li>./Documento.txt – arquivo na mesma pasta</li>
+    <li>img src="diretorio/arquivo" – arquivo em uma subpasta</li>
+    <li>img src="../arquivo" – arquivo na pasta pai (um nível acima)</li>
+  </ul>
+
+  <br>
+
+  <h2>Tags HTML Comuns:</h2>
+  <ul>
+    <li>&lt;header&gt;, &lt;section&gt;</li>
+    <li>&lt;nav&gt;, &lt;aside&gt;</li>
+    <li>&lt;figure&gt;, &lt;footer&gt;</li>
+    <li>&lt;em&gt;, &lt;strong&gt;</li>
+    <li>&lt;hgroup&gt;</li>
+    <li>&lt;article&gt;</li>
+    <li>&lt;a&gt;</li>
+    <li>&lt;mark&gt;</li>
+    <li>&lt;main&gt;</li>
+    <li>&lt;time&gt;</li>
+  </ul>
+
+  <br>
+
+  <h2>Header</h2>
+  <p>O elemento &lt;header&gt; é usado para identificar o cabeçalho de uma página ou seção, podendo conter títulos, logotipos, menus, entre outros.</p>
+
+  <h2>Nav</h2>
+  <p>O &lt;nav&gt; agrupa links de navegação, facilitando o acesso às diferentes partes do site.</p>
+
+  <h2>Figure e Figcaption</h2>
+  <p>O &lt;figure&gt; é utilizado para inserir imagens e elementos visuais, enquanto &lt;figcaption&gt; fornece a legenda explicativa.</p>
+
+  <figure>
+    <img src="exemplo.jpg" alt="Imagem de Exemplo">
+    <figcaption>Legenda explicativa da imagem.</figcaption>
+  </figure>
+
+  <h2>Footer</h2>
+  <p>O &lt;footer&gt; indica o rodapé da página ou seção, geralmente contendo informações como direitos autorais e autoria.</p>
+
+  <footer>
+    <p>&copy; 2025 - Todos os direitos reservados.</p>
+  </footer>
 
 </body>
 </html>

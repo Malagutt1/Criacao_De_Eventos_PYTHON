@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../CSS/STYLE_CSS_PADRAO.css" /> <!-- Arquivo CSS padrão -->
+    <title>Exemplos de Mídia em HTML: Áudio e Vídeo</title>
+</head>
+<body>
+    <header>
+        <h1>Exemplos de players de áudio e vídeo</h1>
+        <h2>Tag &lt;audio&gt;</h2>
+        <p>Exemplo básico de um player de áudio integrado</p>
+    </header>
+
+    <!-- A tag <audio> permite inserir arquivos de som na página. O atributo "controls" adiciona botões para tocar, pausar e controlar o volume -->
+    <section class="music">
+        <audio controls>
+            <source src="../audio_video/recursos_audio/" type="audio/mpeg" />
+            Seu navegador não suporta a reprodução de áudio
+            <!-- Mensagem mostrada quando o navegador não suporta o elemento -->
+        </audio>
+    </section>
+
+    <h2>Tag &lt;video&gt;</h2>
+    <p>Exemplo simples de um player de vídeo</p>
+
+    <section class="video_temp">
+        <video src="../audio_video/recursos_video/video_10seconds.mp4" width="520" height="auto" controls>
+            Seu navegador não suporta vídeo.
+        </video>
+
+        <!-- A tag <video> é usada para exibir vídeos embutidos. Os atributos width e height controlam o tamanho do vídeo. O "controls" adiciona os botões de reprodução -->
+    </section>
+
+    <h2>Atributos principais</h2>
+    <ul>
+        <li><strong>controls:</strong> Adiciona os controles de reprodução, como play, pausa e controle de volume</li>
+        <li><strong>width e height:</strong> Definem o tamanho do vídeo (não aplicável a áudio)</li>
+        <li><strong>autoplay:</strong> Inicia a reprodução automaticamente ao carregar a página (uso não recomendado para evitar incômodo ao usuário)</li>
+        <li><strong>loop:</strong> Repetição contínua do áudio ou vídeo</li>
+        <li><strong>muted:</strong> Inicializa o vídeo sem som. Muito usado junto com autoplay</li>
+    </ul>
+
+    <h3><a href="../TAGS_SEMANTICA/index_NEW.html">&lt; Voltar ao menu principal</a></h3>
+</body>
+</html>
