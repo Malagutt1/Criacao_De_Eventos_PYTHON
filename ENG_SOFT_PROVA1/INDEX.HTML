@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Requisitos do Sistema</title>
+    <style>
+        :root {
+            --bg: #0f1724;
+            --card: #0b1220;
+            --muted: #9aa4b2;
+            --accent: #7dd3fc;
+            --white: #e6eef6;
+            font-family: Inter, system-ui, Arial;
+        }
+
+        body {
+            margin: 0;
+            background: linear-gradient(180deg, #071028 0%, #071824 100%);
+            color: var(--white);
+            padding: 32px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrap {
+            max-width: 1100px;
+            width: 100%
+        }
+
+        header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px
+        }
+
+        .logo {
+            min-width: 64px;
+            min-height: 64px;
+            padding: 8px 12px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent), #60a5fa);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #042331;
+            font-weight: 700;
+            font-size: 14px;
+            /* menor que antes pra caber */
+            letter-spacing: 1px;
+            text-align: center;
+            line-height: 1.2;
+            white-space: nowrap;
+            /* evita quebrar em várias linhas */
+        }
+
+        p.lead {
+            margin: 6px 0 0;
+            color: var(--muted)
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            font-size: 18px;
+            color: var(--accent)
+        }
+
+        h3 {
+            margin: 16px 0 8px;
+            font-size: 16px;
+            color: var(--white)
+        }
+
+        p,
+        li {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.5
+        }
+
+        ul {
+            margin: 8px 0 16px 20px
+        }
+
+        .example {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--accent);
+            padding: 10px;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: bold
+        }
+
+        .refs a {
+            color: var(--accent);
+            text-decoration: none
+        }
+
+        .refs a:hover {
+            text-decoration: underline
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="logo">RF|RN|RNF</div>
+            <div>
+                <h1>Requisitos do Sistema</h1>
+                <p class="lead">Resumo organizado em RF, RN e RNF, com exemplos variados e boas práticas.</p>
+            </div>
+        </header>
+
+        <!-- =================== RF =================== -->
+        <section class="card">
+            <h2>Requisitos Funcionais (RF)</h2>
+            <p>São <span class="highlight">funções que o sistema deve oferecer</span>. Podem ser acionados pelo
+                <strong>usuário</strong> ou pelo <strong>próprio sistema</strong>.</p>
+
+            <ul>
+                <li><strong>RF.001</strong> — O sistema deve permitir que o cliente cadastre seus dados pessoais
+                    (<em>usuário</em>).</li>
+                <li><strong>RF.002</strong> — O sistema deve registrar automaticamente a data e hora do cadastro
+                    (<em>sistema</em>).</li>
+                <li><strong>RF.003</strong> — O sistema deve permitir que o administrador gere relatórios financeiros.
+                </li>
+                <li><strong>RF.004</strong> — O sistema deve permitir que usuários realizem login com autenticação
+                    segura.</li>
+                <li><strong>RF.005</strong> — O sistema deve permitir registrar veículos com patrimônio, modelo, placa e
+                    apólice.</li>
+                <li><strong>RF.006</strong> — O sistema deve processar pagamentos online via cartão de crédito e PIX.
+                </li>
+            </ul>
+
+            <div class="example">
+                <strong>Boa prática de escrita:</strong><br>
+                ❌ “O sistema deve permitir encaminhamento de solicitações para a direção do campus.”<br>
+                ✅ RF.010 — O sistema deve permitir encaminhar <strong>uma</strong> solicitação à direção do campus.<br>
+                ✅ RF.011 — O sistema deve permitir encaminhar <strong>um lote</strong> de solicitações à direção do
+                campus.
+            </div>
+        </section>
+
+        <!-- =================== RN =================== -->
+        <section class="card">
+            <h2>Regras de Negócio (RN)</h2>
+            <p>São <span class="highlight">restrições, condições, cálculos ou validações</span> que o sistema deve
+                obedecer para implementar corretamente os RF.</p>
+            <p>Devem ser identificadas com <code>RN.&lt;NNN&gt;</code> e estar sempre associadas a um ou mais RF.</p>
+
+            <ul>
+                <li><strong>RN.001</strong> — Cadastro de Pessoa Física deve conter: Nome, CPF válido, E-mail, Telefone
+                    e Endereço.</li>
+                <li><strong>RN.002</strong> — Cadastro de Pessoa Jurídica deve conter: Razão Social, Nome Fantasia, CNPJ
+                    válido, E-mail, Telefone e Endereço.</li>
+                <li><strong>RN.003</strong> — O login deve ser bloqueado após 5 tentativas inválidas.</li>
+                <li><strong>RN.004</strong> — Relatórios financeiros só podem ser gerados por administradores.</li>
+                <li><strong>RN.005</strong> — Exclusão de veículo deve registrar o motivo da exclusão.</li>
+                <li><strong>RN.006</strong> — O cálculo do preço líquido de um produto deve ser:<br>
+                    Preço Líquido = Preço Produto − (Preço Produto × % Imposto ÷ 100).</li>
+                <li><strong>RN.007</strong> — Pagamentos online devem ser aprovados apenas após validação da operadora.
+                </li>
+            </ul>
+
+            <div class="example">
+                <strong>Diferenciação:</strong><br>
+                ✔ Requisito: “O sistema deve permitir cadastrar clientes.”<br>
+                ✔ Regra de Negócio: “O cadastro de cliente PF deve obrigatoriamente conter CPF válido.”<br><br>
+                <strong>Rastreabilidade:</strong> uma RN deve sempre estar associada a pelo menos um RF, e um RF pode
+                ter várias RN vinculadas.
+            </div>
+        </section>
+
+        <!-- =================== RNF =================== -->
+        <section class="card">
+            <h2>Requisitos Não Funcionais (RNF)</h2>
+            <p>Não definem <em>o que</em> o sistema faz, mas <span class="highlight">como</span> ele deve se comportar.
+                Tratam de atributos de qualidade como segurança, desempenho, usabilidade, confiabilidade e
+                portabilidade.</p>
+
+            <h3>Classificação</h3>
+            <ul>
+                <li><strong>Segurança</strong>: criptografia de dados, autenticação SSL/HTTPS, controle de permissões de
+                    acesso.</li>
+                <li><strong>Desempenho</strong>: tempo de resposta inferior a 2 segundos, suportar 500 usuários
+                    simultâneos.</li>
+                <li><strong>Usabilidade</strong>: interface acessível e intuitiva, compatível com padrões de ergonomia.
+                </li>
+                <li><strong>Confiabilidade</strong>: recuperação em até 2 minutos após falha, disponibilidade mínima de
+                    99,5%.</li>
+                <li><strong>Portabilidade</strong>: compatibilidade com navegadores modernos e sistemas operacionais
+                    principais.</li>
+            </ul>
+
+            <h3>Exemplos</h3>
+            <div class="example">
+                RNF.001 — O sistema deve criptografar todas as senhas usando hashing seguro (bcrypt).<br><br>
+                RNF.002 — O sistema deve responder em menos de 2 segundos para consultas de clientes.<br><br>
+                RNF.003 — O sistema deve estar disponível 24/7 com SLA de 99,5%.<br><br>
+                RNF.004 — O sistema deve ser executável em Windows, Linux e MacOS sem alterações no código.<br><br>
+                RNF.005 — Todas as comunicações devem utilizar HTTPS com certificados SSL válidos.<br><br>
+                RNF.006 — Os servidores devem estar em Data Centers com acesso físico controlado.
+            </div>
+        </section>
+
+        <!-- =================== Referências =================== -->
+        <section class="card refs">
+            <h2>📂 Referências</h2>
+            <ul>
+                <li><a href="https://www.dropbox.com/scl/fi/rmskmfepwturldn71aeyw/Analise_01-Requisitos-Funcionais.pdf?rlkey=ovo1u59o9vwr1rp34z0ksu3ak&e=1&dl=0"
+                        target="_blank">Análise 01 — Requisitos Funcionais (PDF)</a></li>
+                <li><a href="https://www.dropbox.com/scl/fi/35yt1z75qsdt6esi73zon/Analise_02-RegrasNegocio.pdf?rlkey=m6lwegh7g791qw0fqco3m6lm1&e=1&dl=0"
+                        target="_blank">Análise 02 — Regras de Negócio (PDF)</a></li>
+                <li><a href="https://www.dropbox.com/scl/fi/t0eebbchae5hrt3jri8lz/Analise_03-Requisitos-Nao-Funcionais.pdf?rlkey=m1fpc65xstb12at5mxbf9efm8&e=1&dl=0"
+                        target="_blank">Análise 03 — Requisitos Não Funcionais (PDF)</a></li>
+            </ul>
+        </section>
+
+    </div>
+</body>
+
+</html>
